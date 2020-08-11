@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
+  function handleSubmit(e) {
+    e.preventDefault()
+    const url = "http://localhost:7000/bookmarks"
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer be59efa6-94c1-494f-bccf-35e04fe2fbfb"
+      }
+    }
+    fetch(url, options)
+    .then(res => res.json)
+    .then(bookmarks => console.log(bookmarks))
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <h1>Bookmarks client</h1>
+      <form action="">
+        <button type="submit" onClick={(e) => handleSubmit(e)}>
+          Fetch
+        </button>
+      </form>
     </div>
   );
 }
