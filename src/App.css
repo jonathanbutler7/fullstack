@@ -18,3 +18,12 @@ input, select, button {
 .navbar h3 {
   padding-right: 1rem;
 }
+
+.bookmark-list-item {
+  border: 1px solid black;
+  margin: 1rem;
+}
+.get {
+  display: flex;
+  flex-wrap: wrap;
+}
