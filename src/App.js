@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
 import BookmarksContext from "./BookmarksContext";
+import Get from "./Get"
+import Post from './Post'
+import Patch from "./Patch"
+import Delete from "./Delete"
 
 function App() {
   const initialState = {
-    
+    bookmarks
   };
-
+  
   function handleSubmit(e) {
     e.preventDefault();
     const url = "http://localhost:7000/bookmarks";
@@ -18,22 +22,23 @@ function App() {
     };
     fetch(url, options)
       .then((res) => res.json())
-      .then((bookmarks) => console.log(bookmarks));
+      .then((bookmarks) => initialState['bookmarks'] = bookmarks );
   }
-
+  //initialState['bookmarks'] = bookmarks or initialState.bookmarks = bookmarks
+console.log({initialState})
   return (
     <BookmarksContext.Provider
       value={{
-        
+
       }}
     >
       <div className="">
       <h1>Bookmarks client</h1>
-      <form action="">
-        <button type="submit" onClick={(e) => handleSubmit(e)}>
-          Fetch
-        </button>
-      </form>
+      <Get handleSubmit={handleSubmit} />
+      <Post />
+      <Patch />
+      <Delete />
+      
     </div>
     </BookmarksContext.Provider>
     
