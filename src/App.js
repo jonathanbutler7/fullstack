@@ -12,7 +12,7 @@ function App() {
       }
     }
     fetch(url, options)
-    .then(res => res.json)
+    .then(res => res.json())
     .then(bookmarks => console.log(bookmarks))
   }
 
