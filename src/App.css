@@ -10,3 +10,11 @@ input, select, button {
   margin-bottom: 1rem;
   margin-left: 1rem;
 }
+.navbar {
+  display: flex;
+  flex-direction: row;
+  
+}
+.navbar h3 {
+  padding-right: 1rem;
+}

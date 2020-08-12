@@ -6,7 +6,7 @@ function Delete() {
             <h2>Delete
             </h2>
             <label htmlFor="">Enter ID</label>
-            <input type="text"/>
+            <input type="number"/>
             <button type="submit">Delete</button>
         </div>
     )
